@@ -1,0 +1,19 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.active {
+	background: transparent !important;
+	color: white !important;
+	border-bottom: 2px solid white !important;
+	border-radius: 0 !important;
+	font-weight: 600 !important;
+}
+
+
+html{
+	overflow-y: scroll;
+}

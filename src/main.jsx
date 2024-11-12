@@ -14,6 +14,7 @@ import Authproviders from './Providers/Authproviders';
 import Privateroutes from './Routes/Privateroutes';
 import Orders from './components/Orders';
 import Profile from './components/Profile';
+import Error from './components/Error';
 
 
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

@@ -11,8 +11,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { HelmetProvider } from 'react-helmet-async';
 import Authproviders from './Providers/Authproviders';
+import Privateroutes from './Routes/Privateroutes';
 import Orders from './components/Orders';
-import PrivateRoute from './components/PrivateRoute';
+
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "order",
-        element: <PrivateRoute><Orders></Orders></PrivateRoute>,
+        element: <Privateroutes><Orders></Orders></Privateroutes>,
       }
     ],
   },

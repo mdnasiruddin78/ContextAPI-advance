@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/Authproviders';
 
 const Login = () => {
 
-  const {signInUser} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const {signInUser, signInWithGoogle} = useContext(AuthContext)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -17,10 +19,22 @@ const Login = () => {
         signInUser(email,password)
         .then(result => {
           console.log(result.user)
+          e.target.reset();
+          navigate("/")
         })
         .catch(error => {
           console.log('error',error.message)
         })
+    }
+
+    const handleSignInWithGoogle = () => {
+      signInWithGoogle()
+      .then(result => {
+        console.log(result.user)
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
     }
 
     return (
@@ -57,6 +71,9 @@ const Login = () => {
             </form>
             <p className='ml-4 mb-4'>
                 new to this website <Link to="/register">Register</Link>
+            </p>
+            <p>
+              <button onClick={handleSignInWithGoogle} className='btn btn-ghost'>Google</button>
             </p>
           </div>
         </div>

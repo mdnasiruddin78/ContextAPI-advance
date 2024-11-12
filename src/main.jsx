@@ -13,6 +13,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Authproviders from './Providers/Authproviders';
 import Privateroutes from './Routes/Privateroutes';
 import Orders from './components/Orders';
+import Profile from './components/Profile';
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "order",
         element: <Privateroutes><Orders></Orders></Privateroutes>,
+      },
+      {
+        path: "profile",
+        element: <Privateroutes><Profile></Profile></Privateroutes>,
       }
     ],
   },
